@@ -1,7 +1,7 @@
 {
         "name": "zee_tv1",
-        "version": "16",
-		"conclusionStatement": {
+	"description": "Recursively query the dataset",
+	"conclusionStatement": {
           "messages": [
             {
               "content": "via code hook",
