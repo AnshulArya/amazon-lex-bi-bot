@@ -77,7 +77,7 @@ def zeetv_handler(intent_request, session_attributes):
     session_attributes['greetingCount'] = '1'
     session_attributes['resetCount'] = '0'
     session_attributes['finishedCount'] = '0'
-    session_attributes['lastIntent'] = 'zee_tv'
+    session_attributes['lastIntent'] = 'zee_tv1'
 
     # Retrieve slot values from the current request
     slot_values = session_attributes.get('slot_values')
