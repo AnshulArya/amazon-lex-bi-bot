@@ -1,0 +1,64 @@
+{
+        "name": "zee_tv1",
+        "version": "16",
+		"conclusionStatement": {
+          "messages": [
+            {
+              "content": "via code hook",
+              "contentType": "PlainText"
+            }
+          ]
+        },
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "{{lambda-arn}}",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "i want to watch tv show",
+          "show me ",
+          "i would like to watch {event_name}",
+          "how many times {event_name} showing"
+        ],
+        "slots": [
+          {
+            "slotType": "event_name",
+			"name": "event_name", 
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "content": "The name of the event",
+                  "contentType": "PlainText"
+                }
+              ],
+            },
+            "priority": 2,
+			"slotTypeVersion": "$LATEST", 
+			"sampleUtterances": [], 
+            "description": "event_name"
+          },
+          {
+		    "slotType": "Zee_tv1",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What TV show you want to watch?"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "Hello"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}",
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "zeetv1"
+          }
+        ]
+      }
